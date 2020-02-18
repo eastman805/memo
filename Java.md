@@ -36,8 +36,8 @@ Listと似ているが、重複する値を保有できない。
   - Streamでできること
   - 中間操作
     - map  
-    あああ
-    
+      - 各要素を２倍にする操作  
+    ``` int[] newNums = Arrays.stream(nums).map(num -> 2 * num).toArray();
 
 - for文のパターンまとめ
 - 
