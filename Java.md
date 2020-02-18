@@ -37,7 +37,9 @@ Listと似ているが、重複する値を保有できない。
   - 中間操作
     - map  
       - 各要素を２倍にする操作  
-      > int[] newNums = Arrays.stream(nums).map(num -> 2 * num).toArray();
+      > List<Integer> newNums = nums.stream().map(num -> 2 * num).collect(Collectors.toList());
+      - 置き換える操作
+      > List<String> newStrs = strs.stream().map(str -> str.replace("BC", "Z")).collect(Collectors.toList());
 
 - for文のパターンまとめ
 - 
