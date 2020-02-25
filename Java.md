@@ -4,15 +4,17 @@
 
 - 型の種類と使い分け
   - プリミティブ型と参照型  
-   - プリミティブ型  
-     - long
-     - int
-     - short
-     - byte
-     - double
-     - float
-     - boolean
-     - char
+    - プリミティブ型  
+      - long
+      - int
+      - short
+      - byte
+      - double
+      - float
+      - boolean
+      - char
+    - 参照型
+     - 上記以外
   
   
 - staticについて
