@@ -5,14 +5,14 @@
 - 型の種類と使い分け
   - プリミティブ型と参照型  
    - プリミティブ型  
-    - long
-    - int
-    - short
-    - byte
-    - double
-    - float
-    - boolean
-    - char
+     - long
+     - int
+     - short
+     - byte
+     - double
+     - float
+     - boolean
+     - char
   
   
 - staticについて
