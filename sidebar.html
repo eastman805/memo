@@ -1,0 +1,147 @@
+<style>
+    body {
+        margin: 0;
+    }
+
+    #sidebar {
+        font-size: 15px;
+        padding: 30px 0;
+        width: 260px;
+        height: 100%;
+        position: fixed;
+        color: #393a3b;
+        background: #ffffff;
+        text-align: center;
+    }
+
+    #brand-logo {
+        padding-top: 15%;
+        padding-bottom: 15%;
+    }
+
+    #global-nav ul {
+        list-style: none;
+        margin-left: 0;
+        padding: 0%;
+    }
+
+    #global-nav>ul>li {
+        position: relative;
+        list-style: none;
+
+    }
+
+    #global-nav a {
+        color: #393a3b;
+        text-decoration: none;
+        display: block;
+        padding: 15px 0;
+        -moz-transition: background-color .3s linear;
+        -webkit-transition: background-color .3s linear;
+        transition: background-color .3s linear;
+    }
+
+    #global-nav a:hover {
+        font-weight: bold;
+    }
+
+    /* sub-menu icon */
+    #global-nav .sub-menu>a {
+        position: relative;
+    }
+
+    #global-nav .sub-menu>a:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 18px;
+        margin: auto;
+        vertical-align: middle;
+        width: 8px;
+        height: 8px;
+        border-top: 1px solid #393a3b;
+        border-right: 1px solid #393a3b;
+        -moz-transition: all .2s ease-out;
+        -webkit-transition: all .2s ease-out;
+        transition: all .2s ease-out;
+        -moz-transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+
+    #global-nav .sub-menu.is-active>a:after {
+        -moz-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    /* sub-menu */
+    #global-nav .sub-menu-nav {
+        background: #ffffff;
+        color: #393a3b;
+        display: none;
+    }
+</style>
+
+<aside id="sidebar">
+    <h1 id="brand-logo">Logo</h1>
+    <nav id="global-nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li class="sub-menu">
+                <a href="#">Income</a>
+                <ul class="sub-menu-nav">
+                    <li><a href="#">Show Income</a></li>
+                    <li><a href="#">Create Income</a></li>
+                    <li><a href="#">Edit Income</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="#">Payment</a>
+                <ul class="sub-menu-nav">
+                    <li><a href="#">Show Payment</a></li>
+                    <li><a href="#">Create Payment</a></li>
+                    <li><a href="#">Edit Payment</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="#">Saving</a>
+                <ul class="sub-menu-nav">
+                    <li><a href="#">Show Saving</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="#">Data Import</a>
+                <ul class="sub-menu-nav">
+                    <li><a href="#">Import Income</a></li>
+                    <li><a href="#">Import Payment</a></li>
+                    <li><a href="#">Import Client</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Setting</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</aside>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.0.0/velocity.min.js"></script>
+<script type="text/javascript">
+    (function ($) {
+        $(function () {
+            $('.sub-menu > a').on('click', function (e) {
+                e.preventDefault();
+
+                var $subNav = $(this).next('.sub-menu-nav');
+                if ($subNav.css("display") === "none") {
+                    $(this).addClass('is-active');
+                    $subNav.velocity('slideDown', { duration: 400 });
+                } else {
+                    $(this).removeClass('is-active');
+                    $subNav.velocity('slideUp', { duration: 400 });
+                }
+            });
+        });
+    })(jQuery);
+</script>

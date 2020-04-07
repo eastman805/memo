@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="test.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="anime.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <title>資産運用WEB</title>
+</head>
+
+<body>
+  <div id="header">
+    <div class="main_logo">
+      <strong>SAVINGS</strong>
+    </div>
+
+
+    <div class="term">
+      <select>
+        <option>2020/04</option>
+        <option>2020/05</option>
+        <option>2020/06</option>
+      </select>
+    </div>
+  </div>
+
+
+  <iframe src="./sidebar.html" style="height: 100%; position: fixed; border: 0ch;"></iframe>
+
+  <main id="main">
+    <div id="main-in">
+      <!-- 収入-支出 = 貯金額 -->
+      <div class="section_01_comment">MoneyIndex</div>
+
+      <div class="section_01">
+        <div class="box income">
+          <div class="icon wrapper">
+            <i class="far fa-money-bill-alt"></i>
+          </div>
+          <div class="money">
+            <div class="comment">Income</div>
+            <div class="amount">\350,000</div>
+            <div class="percent_plus">▲10%</div>
+          </div>
+        </div>
+        <p class="symbol">-</p>
+        <div class="box pay">
+          <div class="icon wrapper">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <div class="money">
+            <div class="comment">Payment</div>
+            <div class="amount">\150,000</div>
+            <div class="percent_minus">▽12%</div>
+          </div>
+        </div>
+        <p class="symbol">=</p>
+        <div class="box saving">
+          <div class="icon wrapper">
+            <i class="fas fa-piggy-bank"></i>
+          </div>
+          <div class="money">
+            <div class="comment">Saving</div>
+            <div class="amount">\84,000</div>
+            <div class="percent_plus">▲06%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 期間・グラフ -->
+      <div class="section_03">
+
+        <!-- グラフ -->
+        <div class="graph">
+          <div class="flowGraph">
+            <canvas id="DaylyChart"></canvas>
+          </div>
+          <div class="commentGraph">
+
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- 期間・グラフ -->
+      <div class="section_02">
+        <!-- 期間 -->
+        <div class="term">
+          <div class="monthlyTerm">
+            <div class="section_02_comment">MoneyIndex</div>
+            <hr>
+            <img name="runner" class="runner" id="elem1" border="0" src="../img/man.png">
+            <div class="monster" id="elem2"></div>
+            <img class="road" border="0" src="../img/road.jpg">
+          </div>
+          <div class="allTerm">
+            <span>total report</span>
+            <hr>
+
+          </div>
+        </div>
+
+        <!-- グラフ -->
+        <div class="graph">
+          <div class="flowGraph">
+            <canvas id="myChart"></canvas>
+          </div>
+          <div class="commentGraph">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      var timeline = anime.timeline();
+      var elem1 = document.getElementById('elem1');
+      var elem2 = document.getElementById('elem2');
+
+      timeline
+        .add({
+          targets: elem1,
+          translateX: 500,
+          duration: 1000,
+          easing: 'easeOutCubic'
+        })
+        .add({
+          targets: elem2,
+          translateX: 300,
+          duration: 2000,
+          easing: 'easeOutCubic'
+        })
+
+
+      var ctx1 = document.getElementById('DaylyChart').getContext('2d');
+      var chart1 = new Chart(ctx1, {
+        // 作成するグラフの種類
+        type: 'line',
+
+        // ラベルとデータセットを設定
+        data: {
+          labels: ["1日", "5日", "10日", "15日", "20日", "25日", "30日"],
+          datasets: [{
+            label: "Income",
+            borderColor: 'rgb(30, 144, 255)',
+            data: [274000, 277000, 254000, 264000, 240000, 279000, 270000],
+            lineTension: 0.3,
+            fill: false,
+            borderWidth: 3
+          },
+          {
+            label: "Pay",
+            borderColor: 'rgb(219, 112, 147)',
+            data: [80000, 100000, 110000, 116000, 118500, 155000, 180500],
+            lineTension: 0.3,
+            fill: false,
+            borderWidth: 3
+          }
+          ]
+        }
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var chart = new Chart(ctx, {
+        // 作成するグラフの種類
+        type: 'line',
+
+        // ラベルとデータセットを設定
+        data: {
+          labels: ["January", "February", "March", "April", "May", "June", "July"],
+          datasets: [{
+            label: "Income",
+            borderColor: 'rgb(30, 144, 255)',
+            data: [274000, 277000, 254000, 264000, 240000, 279000, 270000],
+            lineTension: 0.3,
+            fill: false,
+            borderWidth: 3
+          },
+          {
+            label: "Pay",
+            borderColor: 'rgb(219, 112, 147)',
+            data: [110000, 80000, 158000, 116000, 96500, 185000, 230500],
+            lineTension: 0.3,
+            fill: false,
+            borderWidth: 3
+          }
+          ]
+        }
+
+      });
+    });
+
+    img = new Array("../img/man.png", "../img/woman.png", "../img/usagi.png"); //*1
+    count = -1; //*2
+    imgTimer();
+
+    function imgTimer() {
+      //画像番号
+      count++; //*3
+      //画像の枚数確認
+      if (count == img.length) count = 0; //*4
+      //画像出力
+      document.runner.src = img[count]; //*5
+      //次のタイマー呼びだし
+      setTimeout("imgTimer()", 500); //*6
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,301 @@
+@charset "utf-8";
+
+
+body{
+  background: #f5f5f5;
+
+  margin: 0;
+}
+
+#main {
+  background: #f5f5f5;
+}
+
+#main-in {
+	padding-left: 300px;
+}
+
+#header {
+  background: #ffffff;
+  height: 80px;
+  display: flex;
+}
+
+
+.main_logo {
+  color: #008080;
+  font-size: 28px;
+  padding-top: 18px;
+  padding-left: 65px;
+}
+
+.term {
+  padding-top: 18px;
+  padding-left: 60px;
+}
+
+.term select::-ms-expand {
+	display: none;
+}
+
+.term select {
+  color: #8f9294;
+  -webkit-appearance: none;
+	-moz-appearance: none;
+  appearance: none;
+	margin-bottom: 20px;
+	padding: 7px 50px 7px 15px;
+	font-size: 18px;
+	line-height: 1.5em;
+  border: 1px solid #bbbbbb;
+	background-image: url(./img/icon_arrow.svg);
+	background-repeat: no-repeat;
+	background-size: 12px 10px;
+	background-position: right 10px center;
+}
+
+option {
+	line-height: 150%;
+
+  }
+
+/* 貯金額セクション */
+.section_01_comment{
+  color: #8f9294;
+  height: 40px;
+  font-size: 24px;
+  padding-top: 50px;
+  padding-left: 35px;
+  font-weight: bold;
+}
+
+.section_01{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 20px;
+  height: 200px;
+}
+.section_01 .box{
+  width: 25%;
+  background: #fff;
+  font-size: 24px;
+  padding: 1%;
+}
+.section_01 .symbol{
+  color: #8f9294;
+  width: 5%;
+  font-size: 36px;
+  text-align: center;
+  padding-top: 35px;
+}
+.section_01 .income{
+  background: #4682b4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-radius: 5px;
+
+}
+
+.section_01 .pay{
+  background: #f08080;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-radius: 5px;
+}
+
+.section_01 .saving{
+  background: #ffd700;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-radius: 5px;
+}
+
+.section_01 .income .icon{
+  width: 30%;
+  background: #4682b4;
+  font-size: 24px;
+  margin-left: -10px;
+}
+
+.section_01 .pay .icon{
+  width: 30%;
+  background: #f08080;
+  font-size: 24px;
+  margin-left: -10px;
+}
+
+.section_01 .saving .icon{
+  width: 30%;
+  background:#ffd700;
+  font-size: 24px;
+  margin-left: -10px;
+}
+
+.section_01 .money{
+  width: 70%;
+  background: #ffffff;
+  position:relative;
+}
+
+.section_01 .money .comment{
+  font-size: 20px;
+  color: #8f9294;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+
+.section_01 .money .amount{
+  font-size: 30px;
+  font-weight: bold;
+  color: #696969;
+  padding-top: 10px;
+  padding-left: 20px;
+  text-align: center;
+}
+
+.section_01 .money .percent_plus{
+  position:absolute; 
+  right: 10%;
+  background: #66cdaa;
+  color: #f5f5f5;
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.section_01 .money .percent_minus{
+  position:absolute; 
+  right: 10%;
+  background: #ff6347;
+  color: #f5f5f5;
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+.section_01 .pay{
+  background: #f08080;
+}
+.section_01 .saving{
+  background: #ffd700;
+}
+
+
+.fa-money-bill-alt
+{
+  font-size: 50px;
+  color:  #f5f5f5;
+}
+
+.fa-shopping-cart
+{
+  font-size: 50px;
+  color:  #f5f5f5;
+}
+
+.fa-piggy-bank
+{
+  font-size: 50px;
+  color:  #f5f5f5;
+}
+
+
+
+
+
+.wrapper {
+  display: flex;
+  justify-content: center; /*左右中央揃え*/
+  align-items: center;     /*上下中央揃え*/
+}
+
+
+
+/* 期間とグラフセクション */
+
+.section_02_comment{
+  color: #8f9294;
+  height: 40px;
+  font-size: 24px;
+  padding-top: 50px;
+  padding-left: 25px;
+  font-weight: bold;
+}
+
+
+
+.section_02{
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+/* 期間 */
+.section_02 .term{
+  width: 50%;
+  padding: 20px;
+}
+.section_02 .term .monthlyTerm{
+  height: 50%;
+}
+
+
+
+
+
+.section_02 .term .allTerm{
+  position: relative;
+  height: 50%;
+}
+
+/* グラフ */
+.section_02 .graph{
+  width: 50%;
+  padding: 20px;
+}
+.section_02 .graph .flowGraph{
+  height: 80%;
+}
+.section_02 .graph .commentGraph{
+  height: 20%;
+}
+
+
+
+.section_02 .monthlyTerm .runner{
+  position: absolute;
+  background-color: #1fc3cd;
+  width: 30px;
+  height: 150px;
+  z-index: 3;
+}
+.section_02 .monthlyTerm .monster{
+  position: absolute;
+  background-color: #eb6517;
+  width: 30px;
+  height: 150px;
+  z-index: 2;
+}
+.section_02 .monthlyTerm .road{
+  position: absolute;
+  width: 650;
+  height: 50px;
+  z-index: 1;
+  margin-top: 120px;
+}
